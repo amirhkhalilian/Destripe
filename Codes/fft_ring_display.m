@@ -1,10 +1,7 @@
 clc; clear; close all;
 %% Load image
-% img = double(imread('Megaphragama122017-1 8x8x8nm-cropped0005.tif'));
+img = double(imread('Megaphragama122017-1 8x8x8nm-cropped0005.tif'));
 
-% img = double(imread('circles.jpg'));
-img = imread('circles.jpg');
-img = imgaussfilt(img,1);
 [m,n] = size(img);
 %% fft calculation
 im_fft = fft2(img);
@@ -18,7 +15,7 @@ axis image;
 %% Ring parameters
 center = floor(size(img_fft_shift)/2)+1;
 ring_radius_init = 30;
-ring_radius_end = 1023;
+ring_radius_end = 1100;
 ring_halfwidth = 10;
 allout = 0; 	% consider all outliers
 angle_threshold = 0.1;
